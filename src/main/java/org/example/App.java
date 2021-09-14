@@ -8,8 +8,7 @@ import java.util.Scanner;
 
 public class App
 {
-    public static void main( String[] args )
-    {
+    public static void main( String[] args ) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Press C to convert from Fahrenheit to Celsius or F to convert Celsius to Fahrenheit: ");
         String conversion = scan.nextLine();
@@ -18,14 +17,12 @@ public class App
 
         double temper = Double.parseDouble(temperature);
         double convertedTemp;
-        if(conversion.toLowerCase().equals("c"))
-        {
-            convertedTemp = (temper - 32)*5/9;
-            System.out.println(String.format("The temperature in Celcius is %.1f",convertedTemp));
+        if (conversion.toLowerCase().equals("c")) {
+            convertedTemp = (temper - 32) * 5 / 9;
+            System.out.println(String.format("The temperature in Celsius is %.1f", convertedTemp));
+        } else if (conversion.toLowerCase().equals("f")) {
+            convertedTemp = (temper * 9 / 5) + 32;
+            System.out.println(String.format("The temperature in Fahrenheit is %.1f", convertedTemp));
         }
-        else if(conversion.toLowerCase().equals("f"))
-        {
-            convertedTemp = (temper *9/5)+32;
-            System.out.println(String.format("The temperature in Fahrenheit is %.1f",convertedTemp));
     }
 }
